@@ -1,0 +1,7 @@
+The CSS property `calc()` is not working as expected. For example, the following code attempts to set the width of a div to 50% of its parent's width minus 100 pixels, but the result is incorrect:
+
+```css
+div {
+  width: calc(50% - 100px);
+}
+```
