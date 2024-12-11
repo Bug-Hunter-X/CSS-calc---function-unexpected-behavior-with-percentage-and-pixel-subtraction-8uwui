@@ -1,0 +1,20 @@
+The issue arises from how `calc()` handles different units. To fix this, ensure that both parts of the calculation use consistent units. It's often better to calculate the pixel value directly.  If you need to use percentages, consider using viewport units (vw) or other relative units for more predictable results.
+
+Here is one approach to resolve the issue:
+
+```css
+div {
+  width: calc(50% - 100px);
+  /*In this particular example the issue is not the calculation itself, rather the unexpected behavior of the browser. A potential solution would be using a different approach using vw units*/
+  width: 50vw - 100px;
+}
+```
+
+Another solution if you know the parent's width is:
+```css
+/* Assuming parent width is 800px */
+div {
+  width: calc(800px * 0.5 - 100px); /* Calculate the pixel value directly */
+}
+```
+Choose the solution that best suits your specific situation and context.
